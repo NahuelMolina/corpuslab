@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 int main() {
     int cant = 0;
@@ -6,16 +7,18 @@ int main() {
     int i; 
     char tipo[20];
     char tipoAnte[20];
-    int firsType, secondType, thirdType, fourType;
+    int firsType = 0, secondType =0, thirdType=0, fourType=0;
 
     printf("Ingresa la cantidad de viñateros");
     scanf("%i", &cant);
 
     for (i=0;i<cant;i++){
-        printf("Ingresa la cantidad de uva para el %i viñatero", i+1);
+        fflush(stdin);
+        printf("Ingresa la cantidad de uva para el %i viñatero:\n", i+1);
         scanf("%i", &EachWorker[i]);
-        printf("Ingresa el tipo de uva que produce");
-        gets (tipo);
+        fflush(stdin);
+        printf("Ingresa el tipo de uva que produce:\n");
+        scanf("%s",&tipo);
 
         if(tipo == "moscatel"){
             firsType = firsType + EachWorker[i];
@@ -29,11 +32,15 @@ int main() {
         }
     };
 
+    printf("Cantidad de cada trabajador");
+    for(i=0;i<cant;i++){
+        printf("Para el %i: %i",i+1 ,EachWorker[i]);    
+    };
 
-    printf("La cantidad producida de moscatel total es: %i", firsType);
-    printf("La cantidad producida de comunes total es: %i", secondType);
-    printf("La cantidad producida de blancas total es: %i", thirdType);
-    printf("La cantidad producida de la otra nose cual es de: %i", fourType);
+    printf("La cantidad producida de moscatel total es: %i \n", firsType);
+    printf("de comunes es: %i \n", secondType);
+    printf("blancas es: %i \n", thirdType);
+    printf("de la otra nose cual es de: %i \n", fourType);
     
     return 0 ;
 }
