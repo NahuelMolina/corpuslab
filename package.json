@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"gcc main.c -o main && main",
-	  "test": "echo \"Error: no test specified\" && exit 1"
+	"devIndex":"make auster && indexr",
+    "devMain":"make polaca && main",
+	"test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
